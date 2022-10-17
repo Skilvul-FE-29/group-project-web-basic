@@ -1,34 +1,38 @@
+let user = ""
 
-let getDataUsers = async () => {
+let getDataUsers = async function () {
     let response = await fetch(
         "https://634cf79bf5d2cc648e989cbc.mockapi.io/Ajarin/users"
     );
     let users = await response.json();
-    console.log(users)
-    
-    users.forEach(element => {
-        console.log(element);
-    });
-
-    // for (let i = 0; i < users.length; i++) {
-    //     console.log(i);
-    // }
-
-    // let user_email = document.getElementById('user_email').value;
-    // let user_password = document.getElementById('user_password').value;
-    
-    // if (user_email == users.user_email && user_password == users.user_password)  {
-    //     return alert('Selamat anda berhasil login');
-    // }else{
-    //     alert('Anda harus mengisi data dengan lengkap !');
-    // }
+    // user.push(users)
+    user = users
+    console.log(user)
 };
 getDataUsers();
 
-// function validation() {
-//     fetch("https://634cf79bf5d2cc648e989cbc.mockapi.io/Ajarin/users")
-//     .then((response) => response.json())
-//     .then((users) => { 
-//         console.log(users)
-//     })
-// }
+let user_email = document.getElementById('user_email');
+let user_password = document.getElementById('user_password');
+
+function validation() {
+
+    if (user_email.value != "" && user_password.value != "") {
+        for(let i = 0; i<user.length; i++){
+            if((user_email.value == user[i]["user_email"])&&(user_password.value == user[i]["user_password"])){
+                console.log("OKE")
+                // window.location.href = './index.html';
+                // let landing_page = './index.html'
+                // window.open(landing_page)
+            }
+        }
+    }  else {
+            alert('Anda harus mengisi data dengan lengkap !');
+        }
+
+}
+
+document.getElementById('submit').addEventListener('click', (ev) => {
+    ev.preventDefault()
+    validation()
+})
+
