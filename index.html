@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/landing-page.css">
-
+    <script src="./script/landing-page.js" defer></script>
     <title>Ajarin</title>
 </head>
 
@@ -15,15 +15,21 @@
     <nav>
         <div class="nav-left">
             <img class="logo" src="./src/Logo Ajarin.svg" alt="Logo Ajarin">
-            <ul class="nav-menu">
+            <ul id="nav-menu">
                 <li><a href="">Beranda</a></li>
                 <li><a href="">Pesan Les</a></li>
                 <li><a href="">Daftar Pesanan</a></li>
+                <li><a href="">Daftar Sesi</a></li>
             </ul>
         </div>
-        <div class="nav-right">
-            <p class="login">Login</p>
+        <div id="nav-right">
+            <a class="login" href="">Login</a>
             <button class="register">Register</button>
+        </div>
+        <div id="hamburger" onclick="navToggle()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
     </nav>
 

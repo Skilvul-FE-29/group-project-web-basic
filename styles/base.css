@@ -47,6 +47,15 @@ a:active {
     text-decoration: none;
 }
 
+button {
+    border: none;
+    transition: all ease-in 0.1s;
+}
+
+button:hover {
+    filter: brightness(70%);
+}
+
 /* variables */
 :root {
     --hijau-tua: #103D2A;
