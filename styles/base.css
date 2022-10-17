@@ -1,22 +1,22 @@
 /* import font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 /* styling reset */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--hijau);
-    background-color: var(--cream);
+  font-family: "Poppins", sans-serif;
+  color: var(--hijau);
+  background-color: var(--cream);
 }
 
 img,
@@ -24,34 +24,34 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a,
 a:hover,
 a:focus,
 a:active {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* variables */
 :root {
-    --hijau-tua: #103D2A;
-    --hijau-muda: #95FFB2;
-    --orange: #FCB43D;
-    --toska: #3DE5E8;
-    --cream: #FFF5E5;
+  --hijau-tua: #103d2a;
+  --hijau-muda: #95ffb2;
+  --orange: #fcb43d;
+  --toska: #3de5e8;
+  --cream: #fff5e5;
 }
