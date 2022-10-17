@@ -20,9 +20,7 @@ function validation() {
         for(let i = 0; i<user.length; i++){
             if((user_email.value == user[i]["user_email"])&&(user_password.value == user[i]["user_password"])){
                 console.log("OKE")
-                // window.location.href = './index.html';
-                // let landing_page = './index.html'
-                // window.open(landing_page)
+                // window.location.href = '';
             }
         }
     }  else {
@@ -31,7 +29,7 @@ function validation() {
 
 }
 
-document.getElementById('submit').addEventListener('click', (ev) => {
+document.getElementById('btn-login').addEventListener('click', (ev) => {
     ev.preventDefault()
     validation()
 })
