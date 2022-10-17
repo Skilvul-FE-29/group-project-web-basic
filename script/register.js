@@ -1,66 +1,49 @@
-let postDataUsers = async () => {
-  let fullName = document.getElementById("name");
-  let email = document.getElementById("email");
-  let password = document.getElementById("password");
-  let confirmPassword = document.getElementById("confirmPassword");
-  let education = document.getElementById("education");
-  let address = document.getElementById("address");
-  let school = document.getElementById("school");
+let fullName = document.getElementById("name");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let confirmPassword = document.getElementById("confirmPassword");
+let education = document.getElementById("education");
+let address = document.getElementById("address");
+let school = document.getElementById("school");
 
-  let data = {
-    fullName: fullName.value,
-    email: email.value,
-    password: password.value,
-    confirmPassword: confirmPassword.value,
-    education: education.value,
-    address: address.value,
-    school: school.value,
-  };
+const API_URL = "https://634ce2e2f5d2cc648e96b729.mockapi.io/user"
 
-  data = JSON.stringify(data);
+const validate = () => {
+    if(fullName.value == "" || email.value == "" || password.value == "" || confirmPassword.value == "" || education == "" || address == "" || school == "") {
+        alert("Data tidak valid");
+    } else {
+        if(password.value == confirmPassword.value) {
+            postTeacher(API_URL, getInput())
+        } else {
+            alert("Konfirmasi password berbeda");
+        }
+    }
+}
 
-  let response = await fetch(
-    "https://634ce2e2f5d2cc648e96b729.mockapi.io/user"
-  );
+const getInput = () => {
+    let user = {
+        "namaLengkap": fullName.value,
+        "email": email.value,
+        "password": password.value,
+        "confirmPassword": confirmPassword.value,
+        "jenjangPendidikan": education.value,
+        "alamat": address.value,
+        "asalSekolah": school.value,
+        "id": ""}
+    
+    return user;
+}
 
-  let users = await response.json();
-  console.log(users);
-};
+document.getElementById("btn-submit").addEventListener("click", (ev) => {
+    ev.preventDefault();
+    validate();
+});
 
-postDataUsers();
 
-// let fullName = document.getElementById("name");
-// let email = document.getElementById("email");
-// let password = document.getElementById("password");
-// let confirmPassword = document.getElementById("confirmPassword");
-// let education = document.getElementById("education");
-// let address = document.getElementById("address");
-// let school = document.getElementById("school");
-
-// const registerBtn = document.getElementById("btn-submit");
-
-// const BASE_API = "https://634ce2e2f5d2cc648e96b729.mockapi.io/user";
-
-// registerBtn.addEventListener("click", function () {
-//   const user = {
-//     name: fullName.value,
-//     email: email.value,
-//     password: password.value,
-//     confirmPassword: confirmPassword.value,
-//     education: education.value,
-//     address: address.value,
-//     school: school.value,
-//   };
-
-//   fetch(BASE_API, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(user),
-//   })
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//     });
-// });
+function postTeacher(url, input) {
+    fetch(url, {
+        method: "POST",
+        body: JSON.stringify(input),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    }).then(response => response.json()).then(json => console.log(json)).catch(err => console.log(err));
+} 
