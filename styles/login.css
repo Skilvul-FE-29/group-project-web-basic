@@ -1,37 +1,53 @@
-* {
-    background-color: var(--hijau-tua);
-}
-
-
 .container {
+    width: 100%;
+    height: 100vh;
+    background: #207953;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: rgb(240, 240, 240);
+    overflow: hidden;
+  }
+  
+  .login__left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .login__right {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.container form {
+  }
+  
+  .login__right h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .login__right-form form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-}
-
-.container form .form-group {
+  }
+  
+  .login__right-form form .form__group {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.form-group label {
-    color: var(--cream);
+    /* align-items: center; */
+  }
+  
+  .form__group label {
     font-size: 1rem;
     font-weight: 500;
-}
+  }
   
-.form-group input {
-    background-color: var(--cream);
+  .form__group input {
     padding: 0.4rem;
     width: 442px;
     font-weight: 400;
@@ -40,34 +56,50 @@
     border-radius: 5px;
     margin-bottom: 0.2rem;
     font-size: 0.8rem;
-    
-}
-
-h3 {
-    text-align: center;
-    color: var(--orange);
-}
-
-
-p {
-    text-align: center;
-    color: var(--cream);
-}
-
-p a {
-    color: inherit;
-    color: var(--hijau-muda);
-}
-
-button {
-    width: 100px;
-    height: 36px;
-    background-color: var(--orange);
+  }
+  
+  .form__group .btn {
+    width: 150px;
+    height: 40px;
+    background-color: #fcb43d;
     border: none;
     outline: none;
     border-radius: 5px;
     font-size: 1rem;
     font-weight: 500;
     color: #222222;
-    margin: 1rem 1rem 1rem 0; 
-}
+    margin-top: 1rem;
+  }
+  
+  .register__right-footer p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  
+  .register__right-footer a {
+    color: #3de5e8;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  
+    .login__left {
+      display: none;
+    }
+  }
+  
+  /* Mobile Phone */
+  
+  @media screen and (max-width: 480px) {
+    .container {
+      overflow: scroll;
+    }
+  
+    .form__group input {
+      width: 330px;
+    }
+  }
+  
