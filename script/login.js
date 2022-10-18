@@ -35,7 +35,7 @@ function validation() {
         }
 }
 
-document.getElementById('submit').addEventListener('click', (ev) => {
+document.getElementById('btn-login').addEventListener('click', (ev) => {
     ev.preventDefault()
     validation()
 
