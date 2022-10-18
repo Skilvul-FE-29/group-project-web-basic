@@ -1,13 +1,9 @@
-let user = ""
 
 let getDataUsers = async function () {
     let response = await fetch(
         "https://634cf79bf5d2cc648e989cbc.mockapi.io/Ajarin/users"
     );
     let users = await response.json();
-    // user.push(users)
-    user = users
-    console.log(user)
 };
 getDataUsers();
 
@@ -20,17 +16,19 @@ function validation() {
         for(let i = 0; i<user.length; i++){
             if((user_email.value == user[i]["user_email"])&&(user_password.value == user[i]["user_password"])){
                 console.log("OKE")
-                // window.location.href = '';
+                // window.location.href = './index.html';
+                // let landing_page = './index.html'
+                // window.open(landing_page)
             }
         }
     }  else {
             alert('Anda harus mengisi data dengan lengkap !');
         }
-
 }
 
 document.getElementById('btn-login').addEventListener('click', (ev) => {
     ev.preventDefault()
     validation()
+
 })
 
