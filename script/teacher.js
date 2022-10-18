@@ -1,15 +1,28 @@
 // Search fiture
-const SearchInput = document.querySelectorAll(".search-input");
-const searchBtn = document.getElementById("search-btn");
 const teacherContainer = document.querySelector(".list__container-card");
-console.log(teacherContainer);
+const searchBar = document.getElementById("name__input");
+
+let data = [];
+
+searchBar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+
+  const filteredTeachers = data.filter((teacher) => {
+    return (
+      teacher.name.toLowerCase().includes(searchString) ||
+      teacher.university.toLowerCase().includes(searchString) ||
+      teacher.jurusan.toLowerCase().includes(searchString)
+    );
+  });
+  displayTeacher(filteredTeachers);
+});
 
 const loadTeacher = async () => {
   try {
     const res = await fetch(
       "https://634ce2e2f5d2cc648e96b729.mockapi.io/teacher"
     );
-    const data = await res.json();
+    data = await res.json();
     displayTeacher(data);
   } catch (error) {
     console.log(error);
