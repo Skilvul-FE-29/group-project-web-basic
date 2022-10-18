@@ -1,13 +1,9 @@
-let user = ""
 
 let getDataUsers = async function () {
     let response = await fetch(
         "https://634cf79bf5d2cc648e989cbc.mockapi.io/Ajarin/users"
     );
     let users = await response.json();
-    // user.push(users)
-    user = users
-    console.log(user)
 };
 getDataUsers();
 
@@ -28,11 +24,11 @@ function validation() {
     }  else {
             alert('Anda harus mengisi data dengan lengkap !');
         }
-
 }
 
-document.getElementById('submit').addEventListener('click', (ev) => {
+document.getElementById('btn-login').addEventListener('click', (ev) => {
     ev.preventDefault()
     validation()
+
 })
 
