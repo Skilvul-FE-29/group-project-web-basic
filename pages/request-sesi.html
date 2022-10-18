@@ -9,78 +9,79 @@
     <!-- Base Css -->
     <link rel="stylesheet" href="../styles/base.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/request-sesi.css" />
     <script src="../script/request-sesi.js" defer></script>
 </head>
 <body>
-    <div class="form-title">
-
-    </div>
-
-    <form action="">
-        <div>
-            <h3>Peserta les</h3>
-
-            <div id="radio-peserta">
-                <input type="radio" name="peserta-les" value="individu" id="rd-individu">Individu
-                <input type="radio" name="peserta-les"  value="kelompok" id="rd-kelompok">Kelompok
+    <div class="container">
+        <div class="form-title">
+            <h1>Pesan Les</h1>
+            <p>Yuk jadwalkan les sekarang dan mulai belajar </p>
+        </div>
+    
+        <form action="" class="form-section">
+            <div class="peserta-les">
+                <h3>Peserta les</h3>
+    
+                <div class="radio-peserta">
+                    <input type="radio" name="peserta-les" value="individu" id="rd-individu"> Individu
+                    <input type="radio" name="peserta-les"  value="kelompok" id="rd-kelompok"> Kelompok
+                </div>
             </div>
-        </div>
-        <div>
-            <h3>Materi</h3>
-
-            <p>Jenjang pendidikan</p>
-
-            <input type="radio" name="pendidikan" value="SD"> SD
-            <input type="radio" name="pendidikan" value="SMP"> SMP
-            <input type="radio" name="pendidikan" value="SMP"> SMA
-
-            <p>Topik</p>
-            <select name="" id="">
-                <option value="Matematika">Matematika</option>
-                <option value="Fisika">Fisika</option>
-                <option value="Kimia">Kimia</option>
-                <option value="Biologi">Biologi</option>
-                <option value="Ekonomi">Ekonomi</option>
-                <option value="IPA">IPA</option>
-                <option value="IPS">IPS</option>
-            </select>
-
-            <p>Detail Topik</p>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Jelaskan materi apa yang kamu ingin pelajari"></textarea>
-        </div>
-        <div>
-            <h3>Waktu Les</h3>
-
-            <p>Tanggal Les</p>
-            <input type="date">
-
-            <p>Jam Mulai</p>
-            <input type="time">
-
-            <p>Jam Selesai</p>
-            <input type="time">
-
-        </div>
-        <div>
-            <h3>Waktu Les</h3>
-
-            <input type="radio">
-            <label for="">Online</label>
-            
-            <input type="radio">
-            <label for="">Offline</label>
-        </div>
-        <div>
-            <h3>Informasi Tambahan</h3>
-            <p>Catatan tambahan untuk pengajarmu</p>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div>
-            <button id="btn-batal">Batalkan Pesanan</button>
-            <button id="btn-pesan">Pesan Sekarang</button>
-        </div>
-    </form>
+            <div class="materi">
+                <h3>Materi</h3>
+                <p>Jenjang pendidikan</p>
+                
+                <div class="rd-pendidikan">
+                    <input type="radio" name="pendidikan" value="SD" id="rd-sd"> SD
+                    <input type="radio" name="pendidikan" value="SMP" id="rd-smp"> SMP
+                    <input type="radio" name="pendidikan" value="SMP" id="rd-sma"> SMA
+                </div>
+    
+                <p>Topik</p>
+                <select name="" id="select-topik">
+                    <option value="Matematika">Matematika</option>
+                    <option value="Fisika">Fisika</option>
+                    <option value="Kimia">Kimia</option>
+                    <option value="Biologi">Biologi</option>
+                    <option value="Ekonomi">Ekonomi</option>
+                    <option value="IPA">IPA</option>
+                    <option value="IPS">IPS</option>
+                </select>
+    
+                <p>Detail Topik</p>
+                <textarea name="" id="" cols="100" rows="5" placeholder="Jelaskan materi apa yang kamu ingin pelajari"></textarea>
+            </div>
+            <div class="waktu-les">
+                <h3>Waktu Les</h3>
+    
+                <p>Tanggal Les</p>
+                <input type="date" id="date">
+    
+                <p>Jam Mulai</p>
+                <input type="time" id="time">
+    
+                <p>Jam Selesai</p>
+                <input type="time" id="time">
+    
+            </div>
+            <div class="lokasi-les">
+                <h3>Lokasi Les</h3>
+    
+                <input type="radio" name="lokasi" id="rd-on"> Online
+                <input type="radio" name="lokasi" id="rd-off"> Offline
+            </div>
+            <div class="info">
+                <h3>Informasi Tambahan</h3>
+                <p>Catatan tambahan untuk pengajarmu</p>
+                <textarea name="" id="" cols="100" rows="5"></textarea>
+            </div>
+            <div class="button">
+                <button id="btn-batal">Batalkan Pesanan</button>
+                <button id="btn-pesan">Pesan Sekarang</button>
+            </div>
+        </form>
+    </div>
     
 </body>
 </html>
