@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/landing-page.css">
+    <link rel="stylesheet" href="../styles/teacher-detail.css">
+    <script src="../script/landing-page.js" defer></script>
+    <script src="../script/teacher-detail.js" defer></script>
+    <title>Ajarin | Detail Pengajar</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <img class="logo" src="../src/Logo Ajarin.svg" alt="Logo Ajarin">
+            <ul id="nav-menu">
+                <li><a href="">Beranda</a></li>
+                <li><a href="">Pesan Les</a></li>
+                <li><a href="">Daftar Pesanan</a></li>
+                <li><a href="">Daftar Sesi</a></li>
+            </ul>
+        </div>
+        <div id="nav-right">
+            <a class="login" href="">Login</a>
+            <button class="register">Register</button>
+        </div>
+        <div id="hamburger" onclick="navToggle()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="teacher-header">
+            <div class="header-info">
+                <img src="../src/teacher-sample.png" alt="" class="teacher-img">
+                <div class="header-text">
+                    <p class="name">Juliana Cameron</p>
+                    <p class="jurusan">Matematika | Universitas Gadjah Mada</p>
+                    <p class="alamat">Sleman, DI Yogyakarta</p>
+                </div>
+            </div>
+            <div class="header-btn">
+                <button>Belajar dengan Juliana</button>
+            </div>
+        </section>
+        <section class="teacher-main">
+            <div class="sub-navbar">
+                <ul class="sub-navbar-menu">
+                    <li>Profil Diri</li>
+                    <li>Pengalaman</li>
+                    <li>Ulasan</li>
+                </ul>
+            </div>
+
+
+            <section class="teacher-details">
+                <div class="profil-diri">
+                    <div class="deskripsi-diri">
+                        <h2>Deskripsi Diri</h2>
+                        <p>Hai semuanya, aku adalah seorang mahasiswa matematika yang sangat tertarik pada dunia belajar
+                            mengajar. Aku memiliki pengalaman mengajar selama 6 bulan sebagai pengajar freelance dan
+                            sering
+                            mengikuti berbagai pelatihan softskill</p>
+                    </div>
+                    <div class="profil-diri-bawah">
+                        <div class="edukasi">
+                            <h2>Edukasi</h2>
+                            <div class="edukasi-univ">
+                                <p>Universitas Gadjah Mada</p>
+                                <p>Matematika</p>
+                            </div>
+                            <div class="edukasi-menengah">
+                                <p>SMA N 1 Klaten</p>
+                                <p>Jurusan IPA</p>
+                            </div>
+                        </div>
+                        <div class="bidang-ajar">
+                            <h2>Bidang Ajar</h2>
+                            <ul>
+                                <li>Matematika</li>
+                                <li>Kalkulus</li>
+                                <li>Statistika</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pengalaman">
+                    <h2>Daftar Pengalaman</h2>
+                    <div class="pengalaman-detail">
+                        <p class="posisi">Freelance Mengajar</p>
+                        <div class="pengalaman-status">
+                            <p class="lokasi">Independen |</p>
+                            <p class="mulai">Juli 2021 |</p>
+                            <p class="selesai">Now</p>
+                        </div>
+                        <p class="deskripsi">Saya telah menjadi freelance untuk mengajar anak SD hingga SMA pada mata
+                            pelajaran matematika selama 1 tahun terakhir </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
