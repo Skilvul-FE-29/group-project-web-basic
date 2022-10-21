@@ -50,3 +50,37 @@ const teacher1 = {
         jumlah: 10
     }
 }
+
+const teacherContainer = document.getElementById("teacher-details");
+const navbar = document.getElementsByClassName("navbar-menu");
+const info = document.getElementsByClassName("sub-menu");
+const profilDiri = document.getElementById("profil-diri");
+const pengalaman = document.getElementById("pengalaman");
+const ulasan = document.getElementById("ulasan");
+
+document.getElementById("nav-profil").addEventListener("click", () => {
+    resetHidden();
+    document.getElementById("nav-profil").classList.remove("hidden");
+    document.getElementById("profil-diri").classList.remove("hidden");
+})
+
+document.getElementById("nav-pengalaman").addEventListener("click", () => {
+    resetHidden();
+    document.getElementById("nav-pengalaman").classList.remove("hidden");
+    document.getElementById("pengalaman").classList.remove("hidden");
+})
+
+document.getElementById("nav-ulasan").addEventListener("click", () => {
+    resetHidden();
+    document.getElementById("nav-ulasan").classList.remove("hidden");
+    document.getElementById("ulasan").classList.remove("hidden");
+})
+
+const resetHidden = () => {
+    for(let i=0; i<navbar.length; i++) {
+        navbar[i].classList.add("hidden")
+    }
+    for(let i=0; i<info.length; i++) {
+        info[i].classList.add("hidden");
+    }
+}
