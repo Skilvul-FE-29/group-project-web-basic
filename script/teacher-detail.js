@@ -52,10 +52,12 @@ const teacher1 = {
     }
 }
 
-// Display data
 const headerContainer = document.getElementById("teacher-header");
 const profileContainer = document.getElementById("profil-diri");
 const pengalamanContainer = document.getElementById("pengalaman");
+const reviewContainer = document.getElementById("rating-container");
+
+// display informasi header
 
 headerContainer.innerHTML = `
 <div class="header-info">
@@ -70,6 +72,8 @@ headerContainer.innerHTML = `
 <button>Belajar dengan ${teacher1.nama.split(' ')[0]}</button>
 </div>
 `
+
+// display informasi profil diri
 
 profileContainer.innerHTML = `
 <div class="deskripsi-diri">
@@ -102,13 +106,14 @@ teacher1["bidang ajar"].forEach(bidang => {
     const textnode = document.createTextNode(bidang);
     node.appendChild(textnode);
     bidangContainer.appendChild(node);
-    console.log(bidang);
 })
+
+// display informasi pengalaman
 
 const appendPengalaman = () => {
     teacher1.pengalaman.forEach(pengalaman => {
         const node = document.createElement("div");
-        node.classList.add("pengalaman-detail")
+        node.classList.add("pengalaman-detail");
         node.innerHTML = `
         <p class="posisi">${pengalaman.posisi}</p>
         <div class="pengalaman-status">
@@ -124,9 +129,50 @@ const appendPengalaman = () => {
 
 appendPengalaman();
 
+// display informasi ulasan
 
+const appendUlasan = () => {
+    teacher1.review.forEach(review => {
+        const node = document.createElement("div");
+        node.classList.add("detail-rating");
+        const nodeBintang = document.createElement("div");
+        nodeBintang.classList.add("bintang");
+        for(let i=0; i<review.bintang; i++) {
+            nodeBintang.innerHTML += `<img src="../src/star.svg" alt="bintang">`
+        }
+        node.appendChild(nodeBintang);
+        
+        const nodeNama = document.createElement("p");
+        nodeNama.classList.add("nama");
+        nodeNama.innerText = `${teacher1.nama}`;
 
-// Sub navbar
+        node.appendChild(nodeNama);
+
+        const nodeDeskripsi = document.createElement("p");
+        nodeDeskripsi.classList.add("deskripsi");
+        nodeDeskripsi.innerText = `${review.deskripsi}`;
+
+        node.appendChild(nodeDeskripsi);
+
+        reviewContainer.appendChild(node);
+    })
+
+    const nodeOverall = document.createElement("div");
+    nodeOverall.classList.add("overall-rating");
+    nodeOverall.innerHTML = `
+    <h2>Overall Rating</h2>
+    <div class="rating">
+        <img src="../src/star.svg" alt="bintang">
+        <h2>4,70</h2>
+    </div>
+    <p class="jumlah-ulasan">10 ulasan</p>
+    `
+    document.getElementById("ulasan").appendChild(nodeOverall)
+}
+
+appendUlasan();
+
+// Fungsionalitas sub navbar
 
 const teacherContainer = document.getElementById("teacher-details");
 const navbar = document.getElementsByClassName("navbar-menu");
