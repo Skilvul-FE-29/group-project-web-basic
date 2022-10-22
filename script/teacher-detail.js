@@ -1,6 +1,7 @@
 // Data dummy
 const teacher1 = {
     nama: "Juliana Cameron",
+    foto: "1-5L0-N4SRdDzQV5h6Re5pOEDc05FsRqH",
     edukasi: [
         {
             lokasi: "Universitas Gadjah Mada",
@@ -50,6 +51,82 @@ const teacher1 = {
         jumlah: 10
     }
 }
+
+// Display data
+const headerContainer = document.getElementById("teacher-header");
+const profileContainer = document.getElementById("profil-diri");
+const pengalamanContainer = document.getElementById("pengalaman");
+
+headerContainer.innerHTML = `
+<div class="header-info">
+<img src="https://drive.google.com/uc?export=view&id=${teacher1.foto}" alt="" class="teacher-img">
+<div class="header-text">
+    <p class="name">${teacher1.nama}</p>
+    <p class="jurusan">${teacher1.edukasi[0].jurusan} | ${teacher1.edukasi[0].lokasi}</p>
+    <p class="alamat">${teacher1.alamat["kabupaten kota"]}, ${teacher1.alamat.provinsi}</p>
+</div>
+</div>
+<div class="header-btn">
+<button>Belajar dengan ${teacher1.nama.split(' ')[0]}</button>
+</div>
+`
+
+profileContainer.innerHTML = `
+<div class="deskripsi-diri">
+    <h2>Deskripsi Diri</h2>
+    <p>${teacher1.deskripsi}</p>
+</div>
+<div class="profil-diri-bawah">
+    <div class="edukasi">
+        <h2>Edukasi</h2>
+        <div class="edukasi-univ">
+            <p>${teacher1.edukasi[0].lokasi}</p>
+            <p>${teacher1.edukasi[0].jurusan}</p>
+        </div>
+        <div class="edukasi-menengah">
+            <p>${teacher1.edukasi[1].lokasi}</p>
+            <p>${teacher1.edukasi[1].jurusan}</p>
+        </div>
+    </div>
+    <div class="bidang-ajar">
+        <h2>Bidang Ajar</h2>
+        <ul id="bidang-ajar"></ul>
+    </div>
+</div>
+`
+
+const bidangContainer = document.getElementById("bidang-ajar");
+
+teacher1["bidang ajar"].forEach(bidang => {
+    const node = document.createElement("li");
+    const textnode = document.createTextNode(bidang);
+    node.appendChild(textnode);
+    bidangContainer.appendChild(node);
+    console.log(bidang);
+})
+
+const appendPengalaman = () => {
+    teacher1.pengalaman.forEach(pengalaman => {
+        const node = document.createElement("div");
+        node.classList.add("pengalaman-detail")
+        node.innerHTML = `
+        <p class="posisi">${pengalaman.posisi}</p>
+        <div class="pengalaman-status">
+            <p class="lokasi">${pengalaman.lokasi} |</p>
+            <p class="mulai">${pengalaman.mulai} |</p>
+            <p class="selesai">${pengalaman.selesai}</p>
+        </div>
+        <p class="deskripsi">${pengalaman.deskripsi}</p>
+        `
+        pengalamanContainer.appendChild(node);
+    })
+}
+
+appendPengalaman();
+
+
+
+// Sub navbar
 
 const teacherContainer = document.getElementById("teacher-details");
 const navbar = document.getElementsByClassName("navbar-menu");
