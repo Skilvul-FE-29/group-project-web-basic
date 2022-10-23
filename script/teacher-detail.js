@@ -69,7 +69,8 @@ const displayDetail = (data) => {
 
     for(let i=0; i<data.length; i++) {
         if(data[i].id == target) {
-            displayTeacher(data[i])
+            displayTeacher(data[i]);
+            localStorage.setItem('pengajar_terpilih', JSON.stringify(data[i]));
 
         }
     }
@@ -83,15 +84,15 @@ const displayTeacher = (data) => {
 
     headerContainer.innerHTML = `
     <div class="header-info">
-    <img src="https://drive.google.com/uc?export=view&id=${data.foto}" alt="" class="teacher-img">
-    <div class="header-text">
-        <p class="name">${data.nama}</p>
-        <p class="jurusan">${data.edukasi[0].jurusan} | ${data.edukasi[0].lokasi}</p>
-        <p class="alamat">${data.alamat["kabupaten kota"]}, ${data.alamat.provinsi}</p>
-    </div>
+        <img src="https://drive.google.com/uc?export=view&id=${data.foto}" alt="" class="teacher-img">
+        <div class="header-text">
+            <p class="name">${data.nama}</p>
+            <p class="jurusan">${data.edukasi[0].jurusan} | ${data.edukasi[0].lokasi}</p>
+            <p class="alamat">${data.alamat["kabupaten kota"]}, ${data.alamat.provinsi}</p>
+        </div>
     </div>
     <div class="header-btn">
-    <button>Belajar dengan ${data.nama.split(' ')[0]}</button>
+        <button id="submit" onclick="pilihPengajar()">Belajar dengan ${data.nama.split(' ')[0]}</button>
     </div>
     `
     profileContainer.innerHTML = `
@@ -232,12 +233,6 @@ const resetHidden = () => {
     }
 }
 
-// function postTeacher(url, input) {
-//     fetch(url, {
-//         method: "POST",
-//         body: JSON.stringify(input),
-//         headers: {"Content-type": "application/json; charset=UTF-8"}
-//     }).then(response => response.json()).then(json => console.log(json)).catch(err => console.log(err));
-// } 
-
-// postTeacher("https://634a01375df95285140a732e.mockapi.io/teachers", teacher1)
+const pilihPengajar = () => {
+    window.location.href = './request-sesi.html';
+}
