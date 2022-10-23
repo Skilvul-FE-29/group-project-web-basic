@@ -207,3 +207,13 @@ const resetHidden = () => {
         info[i].classList.add("hidden");
     }
 }
+
+// function postTeacher(url, input) {
+//     fetch(url, {
+//         method: "POST",
+//         body: JSON.stringify(input),
+//         headers: {"Content-type": "application/json; charset=UTF-8"}
+//     }).then(response => response.json()).then(json => console.log(json)).catch(err => console.log(err));
+// } 
+
+// postTeacher("https://634a01375df95285140a732e.mockapi.io/teachers", teacher1)
