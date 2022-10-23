@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="./styles/landing-page.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/landing-page.css" />
     <script src="./script/landing-page.js" defer></script>
+    <!-- <script src="./script/login.js" defer></script> -->
+    <script type="module" src="./script/auth.js" defer></script>
     <title>Ajarin</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class="nav-left">
-            <img class="logo" src="./src/Logo Ajarin.svg" alt="Logo Ajarin">
+      <div class="nav-left">
+        <img class="logo" src="./src/Logo Ajarin.svg" alt="Logo Ajarin" />
+        <ul id="nav-menu">
+          <li><a href="">Beranda</a></li>
+          <li><a href="">Pesan Les</a></li>
+          <li><a href="">Daftar Pesanan</a></li>
+          <li><a href="">Daftar Sesi</a></li>
+          <div class="link-hidden">
             <ul id="nav-menu">
-                <li><a href="">Beranda</a></li>
-                <li><a href="">Pesan Les</a></li>
-                <li><a href="">Daftar Pesanan</a></li>
-                <li><a href="">Daftar Sesi</a></li>
+              <li><a href="#">Study Group</a></li>
+              <li><a href="#">Study Session</a></li>
             </ul>
+          </div>
+        </ul>
+      </div>
+      <div id="nav-right">
+        <div id="not__user-login">
+          <a class="login" href="./pages/login.html">Login</a>
+          <button class="register">
+            <a href="./pages/register.html" style="color: #103d2a">Register</a>
+          </button>
         </div>
-        <div id="nav-right">
-            <a class="login" href="">Login</a>
-            <button class="register">Register</button>
+        <div id="user-login">
+          <a href="#" class="user-link">
+            <img src="./src/coolicon.svg" alt="" />
+            <span id="user-name">Fitron Ansori</span>
+          </a>
         </div>
-        <div id="hamburger" onclick="navToggle()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
+      </div>
+      <div id="hamburger" onclick="navToggle()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </nav>
 
     <main>
-        <section class="hero">
-            <div class="hero-desc">
-                <h1>Butuh bimbingan? <br> Yuk belajar bersama kami</h1>
-                <p>Ajarin merupakan platform yang membantu kalian dalam <br> mendapatkan pengajar yang ahli di bidangnya
-                    dan <br>
-                    kelompok belajar yang saling mendukung</p>
-                <div class="hero-btn">
-                    <button class="pesan-les">Pesan Les Sekarang</button>
-                    <a href="">Pelajari lebih lanjut</a>
-                </div>
-            </div>
-            <div class="hero-img">
-                <img src="./src/hero-img.png" alt="hero image">
-            </div>
-        </section>
+      <section class="hero">
+        <div class="hero-desc">
+          <h1>
+            Butuh bimbingan? <br />
+            Yuk belajar bersama kami
+          </h1>
+          <p>
+            Ajarin merupakan platform yang membantu kalian dalam <br />
+            mendapatkan pengajar yang ahli di bidangnya dan <br />
+            kelompok belajar yang saling mendukung
+          </p>
+          <div class="hero-btn">
+            <button class="pesan-les">Pesan Les Sekarang</button>
+            <a href="">Pelajari lebih lanjut</a>
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="./src/hero-img.png" alt="hero image" />
+        </div>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>

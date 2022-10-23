@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/base.css">
-    <link rel="stylesheet" href="../styles/landing-page.css">
-    <link rel="stylesheet" href="../styles/teacher-detail.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/landing-page.css" />
+    <link rel="stylesheet" href="../styles/teacher-detail.css" />
     <script src="../script/landing-page.js" defer></script>
     <script src="../script/teacher-detail.js" defer></script>
     <title>Ajarin | Detail Pengajar</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class="nav-left">
-            <img class="logo" src="../src/Logo Ajarin.svg" alt="Logo Ajarin">
-            <ul id="nav-menu">
-                <li><a href="">Beranda</a></li>
-                <li><a href="">Pesan Les</a></li>
-                <li><a href="">Daftar Pesanan</a></li>
-                <li><a href="">Daftar Sesi</a></li>
-            </ul>
-        </div>
-        <div id="nav-right">
-            <a class="login" href="">Login</a>
-            <button class="register">Register</button>
-        </div>
-        <div id="hamburger" onclick="navToggle()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
+      <div class="nav-left">
+        <img class="logo" src="../src/Logo Ajarin.svg" alt="Logo Ajarin" />
+        <ul id="nav-menu">
+          <li><a href="">Beranda</a></li>
+          <li><a href="">Pesan Les</a></li>
+          <li><a href="">Daftar Pesanan</a></li>
+          <li><a href="">Daftar Sesi</a></li>
+        </ul>
+      </div>
+      <div id="nav-right">
+        <a class="login" href="login.html">Login</a>
+        <button class="register">
+          <a href="register.html" style="color: #103d2a">Register</a>
+        </button>
+      </div>
+      <div id="hamburger" onclick="navToggle()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </nav>
 
     <main>
-        <img class="return-btn" src="../src/arrow btn.svg" alt="arrow btn" onclick="back()">
-        <section id="teacher-header" class="teacher-header">
-            <!-- ambil data teacher header -->
-        </section>
-        <section class="teacher-main">
-            <div class="sub-navbar">
-                <ul class="sub-navbar-menu">
-                    <li id="nav-profil" class="navbar-menu">Profil Diri</li>
-                    <li id="nav-pengalaman" class="navbar-menu hidden">Pengalaman</li>
-                    <li id="nav-ulasan" class="navbar-menu hidden">Ulasan</li>
-                </ul>
+      <img
+        class="return-btn"
+        src="../src/arrow btn.svg"
+        alt="arrow btn"
+        onclick="back()"
+      />
+      <section id="teacher-header" class="teacher-header">
+        <!-- ambil data teacher header -->
+      </section>
+      <section class="teacher-main">
+        <div class="sub-navbar">
+          <ul class="sub-navbar-menu">
+            <li id="nav-profil" class="navbar-menu">Profil Diri</li>
+            <li id="nav-pengalaman" class="navbar-menu hidden">Pengalaman</li>
+            <li id="nav-ulasan" class="navbar-menu hidden">Ulasan</li>
+          </ul>
+        </div>
+
+        <section id="teacher-details">
+          <div id="profil-diri" class="sub-menu">
+            <!-- ambil data profil dari API -->
+          </div>
+
+          <div id="pengalaman" class="sub-menu hidden">
+            <h2>Daftar Pengalaman</h2>
+            <!-- ambil data pengalaman dari API -->
+          </div>
+
+          <div id="ulasan" class="sub-menu hidden">
+            <div id="rating-container" class="rating-pengajar">
+              <h2>Rating Pengajar</h2>
+              <!-- ambil data review dari API -->
             </div>
-
-
-            <section id="teacher-details">
-                <div id="profil-diri" class="sub-menu">
-                    <!-- ambil data profil dari API -->
-                </div>
-
-                <div id="pengalaman" class="sub-menu hidden">
-                    <h2>Daftar Pengalaman</h2>
-                    <!-- ambil data pengalaman dari API -->
-                </div>
-
-                <div id="ulasan" class="sub-menu hidden">
-                    <div id="rating-container" class="rating-pengajar">
-                        <h2>Rating Pengajar</h2>
-                        <!-- ambil data review dari API -->
-                    </div>
-                </div>
-            </section>
+          </div>
         </section>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>
