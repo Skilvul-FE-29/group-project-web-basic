@@ -10,6 +10,7 @@
   width: 80%;
   margin: 0 auto;
   margin-bottom: 50px;
+  color: var(--hijau-tua);
 }
 
 #teacher {
@@ -97,6 +98,7 @@
 .card__rating-rating {
   font-size: 1.5rem;
 }
+
 .card__rating-rating span {
   font-size: 1.3rem;
   font-weight: 600;
@@ -115,6 +117,7 @@
     margin: 0 auto;
     margin-bottom: 20px;
   }
+
   .teacher__title h1 {
     font-size: 1.5rem;
     text-align: center;
@@ -128,6 +131,7 @@
   .list__container-card {
     grid-template-columns: repeat(2, 1fr);
   }
+
   #teacher-list {
     margin-bottom: 0;
   }

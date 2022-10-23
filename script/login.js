@@ -2,36 +2,35 @@ let users = []
 
 let getDataUsers = async function () {
     let response = await fetch(
-        "https://634cf79bf5d2cc648e989cbc.mockapi.io/Ajarin/users"
+        "https://634ce2e2f5d2cc648e96b729.mockapi.io/user"
     );
     users = await response.json();
     console.log(users);
 };
 getDataUsers();
 
-let user_email = document.getElementById('user_email');
-let user_password = document.getElementById('user_password');
+let email = document.getElementById('user_email');
+let password = document.getElementById('user_password');
+let text = document.getElementById('err-mess')
 
 function validation() {
 
-    if (user_email.value != "" && user_password.value != "") {
-        for(let i = 0; i<users.length; i++){
-            if((user_email.value == users[i]["user_email"])&&(user_password.value == users[i]["user_password"])){
-                console.log("OKE")
-                console.log(users[i]);
-                localStorage.setItem('user_login', JSON.stringify(users[i]))
+    if (email.value != "" && password.value != "") {
+        users.forEach(element => {
+            if ((email.value == element.email) && (password.value == element.password)) {
+                localStorage.setItem('user_login', JSON.stringify(element))
                 window.location.href = '../index.html';
-                break
-
-                // let landing_page = './index.html'
-                // window.open(landing_page)
-            } else {
-                    alert('Anda harus mengisi data dengan benar !');
-                    break
             }
-        }
+            else if (email.value != element.email) {
+                text.innerHTML = `<p> Email salah </p>`
+            }
+            else if (password.value != element.password) {
+                text.innerHTML = `<p> Password salah </p>`
+            }
+        });
     }  else {
-            alert('Anda harus mengisi data dengan lengkap !');
+            alert('Belum memiliki akun? Silahkan registrasi');
+            window.location.href = '../pages/register.html';
         }
 }
 
