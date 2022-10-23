@@ -5,7 +5,8 @@
     margin-top: 2rem;
 }
 
-.form-title h1, .form-title p {
+.form-title h1,
+.form-title p {
     text-align: center;
 }
 
@@ -13,7 +14,11 @@
     margin: 2rem 0;
 }
 
-.peserta-les, .materi, .waktu-les, .lokasi-les, .info {
+.peserta-les,
+.materi,
+.waktu-les,
+.lokasi-les,
+.info {
     position: relative;
     z-index: 1;
     background: rgb(255, 255, 255);
@@ -23,11 +28,23 @@
     border-radius: 15px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.peserta-les h3, .materi h3, .waktu-les h3, .lokasi-les h3, .info h3 {
+
+.peserta-les h3,
+.materi h3,
+.waktu-les h3,
+.lokasi-les h3,
+.info h3 {
     margin-bottom: 0.5rem;
 }
 
-.radio-peserta #rd-individu, .radio-peserta #rd-kelompok, .rd-pendidikan #rd-sd, .rd-pendidikan #rd-smp, .rd-pendidikan #rd-smp, .rd-pendidikan #rd-sma, .lokasi-les #rd-on, .lokasi-les #rd-off {
+.radio-peserta #rd-individu,
+.radio-peserta #rd-kelompok,
+.rd-pendidikan #rd-sd,
+.rd-pendidikan #rd-smp,
+.rd-pendidikan #rd-smp,
+.rd-pendidikan #rd-sma,
+.lokasi-les #rd-on,
+.lokasi-les #rd-off {
     margin-left: 1rem;
 }
 
@@ -45,7 +62,11 @@ textarea {
     margin-left: 1rem;
 }
 
-#select-topik, #date, #time  {
+#select-topik,
+#date,
+#time,
+#mulai,
+#selesai {
     border-radius: 15px;
     border-color: rgba(0, 0, 0, 0.5);
     padding: 8px 8px;
@@ -130,16 +151,21 @@ input[type='radio']:checked:after {
         justify-content: center;
     }
 
-    .peserta-les, .materi, .waktu-les, .lokasi-les, .info {
+    .peserta-les,
+    .materi,
+    .waktu-les,
+    .lokasi-les,
+    .info {
         width: 90%;
     }
 
-    .button{
+    .button {
         margin-left: 35px;
     }
-    
-    #btn-batal, #btn-pesan {
+
+    #btn-batal,
+    #btn-pesan {
         font-size: 0.75rem
     }
-    
+
 }
