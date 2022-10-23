@@ -1,4 +1,5 @@
 let users = [];
+let btnLogin = document.getElementById("btn-login");
 
 let getDataUsers = async function () {
   let response = await fetch(
@@ -31,9 +32,9 @@ function validation() {
   }
 }
 
-document.getElementById("btn-login").addEventListener("click", (ev) => {
+btnLogin.addEventListener("click", (ev) => {
   ev.preventDefault();
   validation();
 });
 
-export { users };
+export default users;
