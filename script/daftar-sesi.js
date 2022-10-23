@@ -1,24 +1,30 @@
+let getDataRequest = async () => {
+    let response = await fetch(
+        "https://634a01375df95285140a732e.mockapi.io/order"
+    );
+    let request = await response.json();
+    // console.log(request)
+    
+    let data = request;
+    // console.log(data)
 
-function data() {
-    const data = ['Matematika Dasar', 'Fisika', 'Kimia', 'Ekonomi', 'Sosiologi' ]
-    let containerData = document.getElementById("daftar-sesi");
-
-    for (let i = 0; i < data.length; i++) {
-            containerData.innerHTML += `
+    data.forEach((item) => {
+        // console.log(item.materi.topik)
+        let containerData = document.getElementById("daftar-sesi");
+        containerData.innerHTML += `
             <section class="card">
                 <div class="card-content">
-                    <h4>${data[i]} : Pertemuan 1</h4>
-                    <p>Pengajar : Putri Dresty F</p>
-                    <p>Hari/Tanggal : Senin, 17 Oktober 2022</p>
-                    <p>Waktu : 14.00 - 15.00 WIB</p>
+                    <h4>${item.materi.topik} : ${item.materi.detail}</h4>
+                    <p>Pengajar : ${item.teacherID}</p>
+                    <p>Tanggal : ${item.waktu.tanggal}</p>
+                    <p>Waktu : ${item.waktu.mulai} - ${item.waktu.selesai} WIB</p>
                 </div>
                 <div class="card-btn">
                     <button id="detail-btn">Lihat Detail Sesi</button>
                 </div>
-            </section>`
-
-                
-    }
-}
-data()
+            </section>
+            `;
+    });
+};
+getDataRequest();
 
