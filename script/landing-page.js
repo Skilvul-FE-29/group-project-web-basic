@@ -16,3 +16,17 @@ const navToggle = () => {
         hamburger.classList.remove("active");
     }
 }
+
+function isLogin() {
+  let cek = null
+  let user = localStorage.getItem('user_login')
+  console.log(user)
+
+  if (user != cek) {
+    let profile = document.getElementById('nav-right')
+    profile.innerHTML = `
+    <img src="../src/coolicon.svg" alt="" class="profile">
+    `
+  } 
+}
+isLogin()
