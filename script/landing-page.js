@@ -27,6 +27,25 @@ function isLogin() {
     profile.innerHTML = `
     <img src="../src/coolicon.svg" alt="" class="profile">
     `
+
+    document.getElementById("halaman-home").addEventListener("click", (ev) => {
+        ev.preventDefault();
+        window.location.href = './';
+    });
+
+    document.getElementById("halaman-pesan").addEventListener("click", (ev) => {
+        ev.preventDefault();
+        window.location.href = './pages/teacher.html';
+    });
+
+    document.getElementById("halaman-daftar-sesi").addEventListener("click", (ev) => {
+        ev.preventDefault();
+        window.location.href = './pages/daftar-sesi.html';
+    });
+
+    document.getElementById("pesan").addEventListener("click", (ev) => {
+      window.location.href = './pages/teacher.html';
+    })
   } 
 }
 isLogin()
