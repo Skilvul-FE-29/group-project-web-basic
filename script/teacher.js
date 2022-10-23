@@ -29,11 +29,17 @@ const loadTeacher = async () => {
   }
 };
 
+const check = (data) => {
+  console.log(data)
+  localStorage.setItem('id_pengajar', JSON.stringify(data))
+  window.location.href = './teacher-detail.html';
+}
+
 const displayTeacher = (data) => {
   const htmlString = data
     .map((teacher) => {
       return `
-        <div class="card-wrapper">
+        <div class="card-wrapper" onclick="check(${teacher.id})">
           <div class="card-profile">
             <img src="https://drive.google.com/uc?export=view&id=${teacher.foto}" alt="" />
           </div>

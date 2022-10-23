@@ -52,125 +52,149 @@ const teacher1 = {
     }
 }
 
-const headerContainer = document.getElementById("teacher-header");
-const profileContainer = document.getElementById("profil-diri");
-const pengalamanContainer = document.getElementById("pengalaman");
-const reviewContainer = document.getElementById("rating-container");
+const loadTeacher = async () => {
+    try {
+      const res = await fetch(
+        "https://634a01375df95285140a732e.mockapi.io/teachers"
+      );
+      data = await res.json();
+      displayDetail(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-// display informasi header
+const displayDetail = (data) => {
+    const target = localStorage.getItem("id_pengajar");
 
-headerContainer.innerHTML = `
-<div class="header-info">
-<img src="https://drive.google.com/uc?export=view&id=${teacher1.foto}" alt="" class="teacher-img">
-<div class="header-text">
-    <p class="name">${teacher1.nama}</p>
-    <p class="jurusan">${teacher1.edukasi[0].jurusan} | ${teacher1.edukasi[0].lokasi}</p>
-    <p class="alamat">${teacher1.alamat["kabupaten kota"]}, ${teacher1.alamat.provinsi}</p>
-</div>
-</div>
-<div class="header-btn">
-<button>Belajar dengan ${teacher1.nama.split(' ')[0]}</button>
-</div>
-`
+    for(let i=0; i<data.length; i++) {
+        if(data[i].id == target) {
+            displayTeacher(data[i])
 
-// display informasi profil diri
-
-profileContainer.innerHTML = `
-<div class="deskripsi-diri">
-    <h2>Deskripsi Diri</h2>
-    <p>${teacher1.deskripsi}</p>
-</div>
-<div class="profil-diri-bawah">
-    <div class="edukasi">
-        <h2>Edukasi</h2>
-        <div class="edukasi-univ">
-            <p>${teacher1.edukasi[0].lokasi}</p>
-            <p>${teacher1.edukasi[0].jurusan}</p>
-        </div>
-        <div class="edukasi-menengah">
-            <p>${teacher1.edukasi[1].lokasi}</p>
-            <p>${teacher1.edukasi[1].jurusan}</p>
-        </div>
-    </div>
-    <div class="bidang-ajar">
-        <h2>Bidang Ajar</h2>
-        <ul id="bidang-ajar"></ul>
-    </div>
-</div>
-`
-
-const bidangContainer = document.getElementById("bidang-ajar");
-
-teacher1["bidang ajar"].forEach(bidang => {
-    const node = document.createElement("li");
-    const textnode = document.createTextNode(bidang);
-    node.appendChild(textnode);
-    bidangContainer.appendChild(node);
-})
-
-// display informasi pengalaman
-
-const appendPengalaman = () => {
-    teacher1.pengalaman.forEach(pengalaman => {
-        const node = document.createElement("div");
-        node.classList.add("pengalaman-detail");
-        node.innerHTML = `
-        <p class="posisi">${pengalaman.posisi}</p>
-        <div class="pengalaman-status">
-            <p class="lokasi">${pengalaman.lokasi} |</p>
-            <p class="mulai">${pengalaman.mulai} |</p>
-            <p class="selesai">${pengalaman.selesai}</p>
-        </div>
-        <p class="deskripsi">${pengalaman.deskripsi}</p>
-        `
-        pengalamanContainer.appendChild(node);
-    })
-}
-
-appendPengalaman();
-
-// display informasi ulasan
-
-const appendUlasan = () => {
-    teacher1.review.forEach(review => {
-        const node = document.createElement("div");
-        node.classList.add("detail-rating");
-        const nodeBintang = document.createElement("div");
-        nodeBintang.classList.add("bintang");
-        for(let i=0; i<review.bintang; i++) {
-            nodeBintang.innerHTML += `<img src="../src/star.svg" alt="bintang">`
         }
-        node.appendChild(nodeBintang);
-        
-        const nodeNama = document.createElement("p");
-        nodeNama.classList.add("nama");
-        nodeNama.innerText = `${teacher1.nama}`;
-
-        node.appendChild(nodeNama);
-
-        const nodeDeskripsi = document.createElement("p");
-        nodeDeskripsi.classList.add("deskripsi");
-        nodeDeskripsi.innerText = `${review.deskripsi}`;
-
-        node.appendChild(nodeDeskripsi);
-
-        reviewContainer.appendChild(node);
-    })
-
-    const nodeOverall = document.createElement("div");
-    nodeOverall.classList.add("overall-rating");
-    nodeOverall.innerHTML = `
-    <h2>Overall Rating</h2>
-    <div class="rating">
-        <img src="../src/star.svg" alt="bintang">
-        <h2>4,70</h2>
-    </div>
-    <p class="jumlah-ulasan">10 ulasan</p>
-    `
-    document.getElementById("ulasan").appendChild(nodeOverall)
+    }
 }
 
-appendUlasan();
+const displayTeacher = (data) => {
+    const headerContainer = document.getElementById("teacher-header");
+    const profileContainer = document.getElementById("profil-diri");
+    const pengalamanContainer = document.getElementById("pengalaman");
+    const reviewContainer = document.getElementById("rating-container");
+
+    headerContainer.innerHTML = `
+    <div class="header-info">
+    <img src="https://drive.google.com/uc?export=view&id=${data.foto}" alt="" class="teacher-img">
+    <div class="header-text">
+        <p class="name">${data.nama}</p>
+        <p class="jurusan">${data.edukasi[0].jurusan} | ${data.edukasi[0].lokasi}</p>
+        <p class="alamat">${data.alamat["kabupaten kota"]}, ${data.alamat.provinsi}</p>
+    </div>
+    </div>
+    <div class="header-btn">
+    <button>Belajar dengan ${data.nama.split(' ')[0]}</button>
+    </div>
+    `
+    profileContainer.innerHTML = `
+    <div class="deskripsi-diri">
+        <h2>Deskripsi Diri</h2>
+        <p>${data.deskripsi}</p>
+    </div>
+    <div class="profil-diri-bawah">
+        <div class="edukasi">
+            <h2>Edukasi</h2>
+            <div class="edukasi-univ">
+                <p>${data.edukasi[0].lokasi}</p>
+                <p>${data.edukasi[0].jurusan}</p>
+            </div>
+            <div class="edukasi-menengah">
+                <p>${data.edukasi[1].lokasi}</p>
+                <p>${data.edukasi[1].jurusan}</p>
+            </div>
+        </div>
+        <div class="bidang-ajar">
+            <h2>Bidang Ajar</h2>
+            <ul id="bidang-ajar"></ul>
+        </div>
+    </div>
+    `
+
+    const bidangContainer = document.getElementById("bidang-ajar");
+
+    data["bidang ajar"].forEach(bidang => {
+        const node = document.createElement("li");
+        const textnode = document.createTextNode(bidang);
+        node.appendChild(textnode);
+        bidangContainer.appendChild(node);
+    })
+
+    const appendPengalaman = () => {
+        data.pengalaman.forEach(pengalaman => {
+            const node = document.createElement("div");
+            node.classList.add("pengalaman-detail");
+            node.innerHTML = `
+            <p class="posisi">${pengalaman.posisi}</p>
+            <div class="pengalaman-status">
+                <p class="lokasi">${pengalaman.lokasi} |</p>
+                <p class="mulai">${pengalaman.mulai} |</p>
+                <p class="selesai">${pengalaman.selesai}</p>
+            </div>
+            <p class="deskripsi">${pengalaman.deskripsi}</p>
+            `
+            pengalamanContainer.appendChild(node);
+        })
+    }
+
+    appendPengalaman();
+
+    const appendUlasan = () => {
+        data.review.forEach(review => {
+            const node = document.createElement("div");
+            node.classList.add("detail-rating");
+            const nodeBintang = document.createElement("div");
+            nodeBintang.classList.add("bintang");
+            for(let i=0; i<review.bintang; i++) {
+                nodeBintang.innerHTML += `<img src="../src/star.svg" alt="bintang">`
+            }
+            node.appendChild(nodeBintang);
+            
+            const nodeNama = document.createElement("p");
+            nodeNama.classList.add("nama");
+            nodeNama.innerText = `${teacher1.nama}`;
+    
+            node.appendChild(nodeNama);
+    
+            const nodeDeskripsi = document.createElement("p");
+            nodeDeskripsi.classList.add("deskripsi");
+            nodeDeskripsi.innerText = `${review.deskripsi}`;
+    
+            node.appendChild(nodeDeskripsi);
+    
+            reviewContainer.appendChild(node);
+        })
+    
+        const nodeOverall = document.createElement("div");
+        nodeOverall.classList.add("overall-rating");
+        nodeOverall.innerHTML = `
+        <h2>Overall Rating</h2>
+        <div class="rating">
+            <img src="../src/star.svg" alt="bintang">
+            <h2>4,70</h2>
+        </div>
+        <p class="jumlah-ulasan">10 ulasan</p>
+        `
+        document.getElementById("ulasan").appendChild(nodeOverall)
+    }
+    
+    appendUlasan();
+
+}
+
+loadTeacher(); 
+
+// Fungsionalitas tombol kembali ke page teacher list
+const back = () => {
+    window.location.href = './teacher.html';
+}
 
 // Fungsionalitas sub navbar
 
