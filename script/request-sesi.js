@@ -56,7 +56,8 @@ const ambilPesanan = () => {
 
 document.getElementById("btn-pesan").addEventListener("click", (ev) => {
     ev.preventDefault();
-    postTeacher("https://634a01375df95285140a732e.mockapi.io/order", ambilPesanan())
+    postTeacher("https://634a01375df95285140a732e.mockapi.io/order", ambilPesanan());
+    window.location.href = './daftar-sesi.html';
 });
 
 function postTeacher(url, input) {
