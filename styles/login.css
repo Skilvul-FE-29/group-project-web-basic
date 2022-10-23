@@ -81,6 +81,13 @@
   color: #3de5e8;
 }
 
+#err-mess p {
+  background-color: rgb(224, 42, 42);
+  margin-top: 1rem;
+  padding: 10px ;
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;

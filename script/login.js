@@ -11,28 +11,23 @@ getDataUsers();
 
 let email = document.getElementById('user_email');
 let password = document.getElementById('user_password');
+let text = document.getElementById('err-mess')
 
 function validation() {
 
     if (email.value != "" && password.value != "") {
-        for(let i = 0; i<users.length; i++){
-            if((email.value == users[i]["email"])){
-                if ((password.value == users[i]["password"])) {
-                    // console.log("OKE")
-                    console.log(users[i]);
-                    localStorage.setItem('user_login', JSON.stringify(users[i]))
-                    window.location.href = '../index.html';
-                    break
-                }
-                else {
-                    alert('Password anda salah!')
-                    break
-                }
-            } else {
-                    alert('Username anda salah ');
-                    break
+        users.forEach(element => {
+            if ((email.value == element.email) && (password.value == element.password)) {
+                localStorage.setItem('user_login', JSON.stringify(element))
+                window.location.href = '../index.html';
             }
-        }
+            else if (email.value != element.email) {
+                text.innerHTML = `<p> Email salah </p>`
+            }
+            else if (password.value != element.password) {
+                text.innerHTML = `<p> Password salah </p>`
+            }
+        });
     }  else {
             alert('Belum memiliki akun? Silahkan registrasi');
             window.location.href = '../pages/register.html';
