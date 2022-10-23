@@ -35,6 +35,7 @@ function validation() {
         }
     }  else {
             alert('Belum memiliki akun? Silahkan registrasi');
+            window.location.href = '../pages/register.html';
         }
 }
 
