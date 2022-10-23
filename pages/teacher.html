@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS Base -->
-    <link rel="stylesheet" href="../styles/base.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../styles/landing-page.css" />
-    <link rel="stylesheet" href="../styles/teacher.css" />
-    <title>Daftar Pengajar | Ajarin</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav-left">
-        <img class="logo" src="../src/Logo Ajarin.svg" alt="Logo Ajarin" />
-        <ul id="nav-menu">
-          <li><a href="">Beranda</a></li>
-          <li><a href="">Pesan Les</a></li>
-          <li><a href="">Daftar Pesanan</a></li>
-          <li><a href="">Daftar Sesi</a></li>
-        </ul>
-      </div>
-      <div id="nav-right">
-        <a class="login" href="">Login</a>
-        <button class="register">Register</button>
-      </div>
-      <div id="hamburger" onclick="navToggle()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </nav>
 
-    <div class="container" id="teacher">
-      <div class="teacher__title">
-        <h1>Daftar Pengajar</h1>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS Base -->
+  <link rel="stylesheet" href="../styles/base.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles/landing-page.css" />
+  <link rel="stylesheet" href="../styles/teacher.css" />
+  <title>Daftar Pengajar | Ajarin</title>
+</head>
 
-      <div class="search__wrapper">
-        <form id="search-form" class="search-form">
-          <!-- <div class="search__form-input">
+<body>
+  <nav>
+    <div class="nav-left">
+      <img class="logo" src="../src/Logo Ajarin.svg" alt="Logo Ajarin" />
+      <ul id="nav-menu">
+        <li><a href="">Beranda</a></li>
+        <li><a href="">Pesan Les</a></li>
+        <li><a href="">Daftar Pesanan</a></li>
+        <li><a href="">Daftar Sesi</a></li>
+      </ul>
+    </div>
+    <div id="nav-right">
+      <a class="login" href="">Login</a>
+      <button class="register">Register</button>
+    </div>
+    <div id="hamburger" onclick="navToggle()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+
+  <div class="container" id="teacher">
+    <div class="teacher__title">
+      <h1>Pilih Pengajar yang Kamu Suka</h1>
+    </div>
+
+    <div class="search__wrapper">
+      <form id="search-form" class="search-form">
+        <!-- <div class="search__form-input">
              <label for="subject__input">Mata Pelajaran</label>
             <input
               type="search"
@@ -62,28 +64,23 @@
             />
           </div> -->
 
-          <div class="search__form-input">
-            <label for="name__input">Search Pengajar</label>
-            <input
-              type="search"
-              class="search__input"
-              id="name__input"
-              placeholder="nama, mata pelajaran"
-              autocomplete="off"
-            />
-          </div>
+        <div class="search__form-input">
+          <label for="name__input">Search Pengajar</label>
+          <input type="search" class="search__input" id="name__input" placeholder="nama/jurusan/bidang ajar"
+            autocomplete="off" />
+        </div>
 
-          <!-- <div class="teacher__container-search-btn">
+        <!-- <div class="teacher__container-search-btn">
             <button id="btn-search">Cari Pengajar</button>
           </div> -->
-        </form>
-      </div>
+      </form>
     </div>
+  </div>
 
-    <div class="container" id="teacher-list">
-      <div class="list__container-card">
-        <!-- card list pengajar -->
-        <!-- <div class="card-wrapper">
+  <div class="container" id="teacher-list">
+    <div class="list__container-card">
+      <!-- card list pengajar -->
+      <!-- <div class="card-wrapper">
           <div class="card-profile">
             <img src="../src/profile-teaacher.png" alt="" />
           </div>
@@ -97,10 +94,11 @@
             <div class="card__rating-review">10 Ulasan</div>
           </div>
         </div> -->
-      </div>
     </div>
+  </div>
 
-    <!-- Js -->
-    <script src="../script/teacher.js"></script>
-  </body>
+  <!-- Js -->
+  <script src="../script/teacher.js"></script>
+</body>
+
 </html>

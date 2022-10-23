@@ -44,6 +44,14 @@ main {
 
 }
 
+.return-btn {
+    position: absolute;
+    top: 88px;
+    left: 48px;
+    cursor: pointer;
+    width: 32px;
+}
+
 .teacher-main {
     margin: 1rem auto;
     width: 656px;
@@ -200,7 +208,7 @@ main {
     margin-left: 8px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
     main {
         overflow: hidden;
     }
@@ -279,5 +287,8 @@ main {
         align-items: center;
     }
 
-
+    .return-btn {
+        top: 108px;
+        left: 10vw;
+    }
 }
