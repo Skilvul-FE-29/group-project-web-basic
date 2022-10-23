@@ -2,36 +2,39 @@ let users = []
 
 let getDataUsers = async function () {
     let response = await fetch(
-        "https://634cf79bf5d2cc648e989cbc.mockapi.io/Ajarin/users"
+        "https://634ce2e2f5d2cc648e96b729.mockapi.io/user"
     );
     users = await response.json();
     console.log(users);
 };
 getDataUsers();
 
-let user_email = document.getElementById('user_email');
-let user_password = document.getElementById('user_password');
+let email = document.getElementById('user_email');
+let password = document.getElementById('user_password');
 
 function validation() {
 
-    if (user_email.value != "" && user_password.value != "") {
+    if (email.value != "" && password.value != "") {
         for(let i = 0; i<users.length; i++){
-            if((user_email.value == users[i]["user_email"])&&(user_password.value == users[i]["user_password"])){
-                console.log("OKE")
-                console.log(users[i]);
-                localStorage.setItem('user_login', JSON.stringify(users[i]))
-                window.location.href = '../index.html';
-                break
-
-                // let landing_page = './index.html'
-                // window.open(landing_page)
+            if((email.value == users[i]["email"])){
+                if ((password.value == users[i]["password"])) {
+                    // console.log("OKE")
+                    console.log(users[i]);
+                    localStorage.setItem('user_login', JSON.stringify(users[i]))
+                    window.location.href = '../index.html';
+                    break
+                }
+                else {
+                    alert('Password anda salah!')
+                    break
+                }
             } else {
-                    alert('Anda harus mengisi data dengan benar !');
+                    alert('Username anda salah ');
                     break
             }
         }
     }  else {
-            alert('Anda harus mengisi data dengan lengkap !');
+            alert('Belum memiliki akun? Silahkan registrasi');
         }
 }
 
