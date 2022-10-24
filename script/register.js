@@ -13,6 +13,7 @@ const validate = () => {
         alert("Data tidak valid");
     } else {
         if(password.value == confirmPassword.value) {
+            localStorage.setItem('user_login', JSON.stringify(getInput()))
             postTeacher(API_URL, getInput())
         } else {
             alert("Konfirmasi password berbeda");
@@ -45,5 +46,5 @@ function postTeacher(url, input) {
         method: "POST",
         body: JSON.stringify(input),
         headers: {"Content-type": "application/json; charset=UTF-8"}
-    }).then(response => response.json()).then(json => console.log(json)).catch(err => console.log(err));
+    }).then(response => response.json()).then(json => console.log(json)).catch(err => console.log(err)).then(() => window.location.href = '../');
 } 
