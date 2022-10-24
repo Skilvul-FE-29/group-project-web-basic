@@ -8,23 +8,30 @@ let getDataRequest = async () => {
     let data = request;
     // console.log(data)
 
+    let userID = JSON.parse(localStorage.getItem("user_login")).id;
+    console.log(userID)
+
     data.forEach((item) => {
         // console.log(item.materi.topik)
         let containerData = document.getElementById("daftar-sesi");
-        containerData.innerHTML += `
-            <section class="card">
-                <div class="card-content">
-                    <h4>${item.materi.topik} : ${item.materi.detail}</h4>
-                    <p>Pengajar : ${item.teacherID}</p>
-                    <p>Tanggal : ${item.waktu.tanggal}</p>
-                    <p>Waktu : ${item.waktu.mulai} - ${item.waktu.selesai} WIB</p>
-                </div>
-                <div class="card-btn">
-                    <button id="detail-btn">Lihat Detail Sesi</button>
-                </div>
-            </section>
-            `;
+        if(item.userID == userID) {
+            containerData.innerHTML += `
+                <section class="card">
+                    <div class="card-content">
+                        <h4>${item.materi.topik} : ${item.materi.detail}</h4>
+                        <p>Pengajar : ${item.teacherName}</p>
+                        <p>Tanggal : ${item.waktu.tanggal}</p>
+                        <p>Waktu : ${item.waktu.mulai} - ${item.waktu.selesai} WIB</p>
+                    </div>
+                    <div class="card-btn">
+                        <button id="detail-btn">Lihat Detail Sesi</button>
+                    </div>
+                </section>
+                `;
+            
+        }
     });
 };
+
 getDataRequest();
 

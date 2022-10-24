@@ -47,8 +47,9 @@ const ambilPesanan = () => {
         },
         "lokasi": document.querySelector('input[name="lokasi"]:checked').value,
         "tambahan": document.getElementById("info-tambahan").value,
-        "userID": JSON.parse(localStorage.getItem("user_login")).user_id,
-        "teacherID": JSON.parse(localStorage.getItem("pengajar_terpilih")).id
+        "userID": JSON.parse(localStorage.getItem("user_login")).id,
+        "teacherID": JSON.parse(localStorage.getItem("pengajar_terpilih")).id,
+        "teacherName": JSON.parse(localStorage.getItem("pengajar_terpilih")).nama
     }
 
     return dataPesanan
