@@ -1,57 +1,58 @@
-// Data dummy
-const teacher1 = {
-    nama: "Juliana Cameron",
-    foto: "1-5L0-N4SRdDzQV5h6Re5pOEDc05FsRqH",
-    edukasi: [
-        {
-            lokasi: "Universitas Gadjah Mada",
-            jurusan: "Matematika"
-        },
-        {
-            lokasi: "SMA Negeri 1 Klaten",
-            jurusan: "Jurusan IPA"
-        }
-    ],
-    alamat: {
-        "kabupaten kota": "Sleman",
-        provinsi: "DI Yogyakarta"
-    },
-    "bidang ajar": ["Matematika", "Kalkulus", "Statistika"],
-    deskripsi: "Hai semuanya, aku adalah seorang mahasiswa matematika yang sangat tertarik pada dunia belajar mengajar. Aku memiliki pengalaman mengajar selama 6 bulan sebagai pengajar freelance dan sering mengikuti berbagai pelatihan softskill",
-    pengalaman: [
-        {
-            posisi: "Freelance Mengajar",
-            lokasi: "Independen",
-            mulai: "Juli 2021",
-            selesai: "Now",
-            deskripsi: "Saya telah menjadi freelance untuk mengajar anak SD hingga SMA pada mata pelajaran matematika selama 1 tahun terakhir ",
-        },
-        {
-            posisi: "Ketua Divisi Materi",
-            lokasi: "HIMATIKA UGM",
-            mulai: "September 2021",
-            selesai: "Now",
-            deskripsi: "Pada himpunan mahasiswa matematika, terdapat aktivitas pengajaran untuk masyarakat umum dan saya berperan untuk mengatur materi yang akan diajarkan"
-        }
-    ],
-    review: [
-        {
-            bintang: 5,
-            nama: "Nurulita Nala",
-            deskripsi: "Kakaknya sangat sabar dan cara kakaknya ngajar ngga bikin aku bosen",
-        },
-        {
-            bintang: 4,
-            nama: "Lauda Virdina",
-            deskripsi: "Bisa banyak latihan soal matematika buat persiapan UTBK nanti"
-        }
-    ],
-    overall: {
-        bintang: 4.75,
-        jumlah: 10
-    }
-}
+// Data dummy dari teacher detail
+// const teacher1 = {
+//     nama: "Juliana Cameron",
+//     foto: "1-5L0-N4SRdDzQV5h6Re5pOEDc05FsRqH",
+//     edukasi: [
+//         {
+//             lokasi: "Universitas Gadjah Mada",
+//             jurusan: "Matematika"
+//         },
+//         {
+//             lokasi: "SMA Negeri 1 Klaten",
+//             jurusan: "Jurusan IPA"
+//         }
+//     ],
+//     alamat: {
+//         "kabupaten kota": "Sleman",
+//         provinsi: "DI Yogyakarta"
+//     },
+//     "bidang ajar": ["Matematika", "Kalkulus", "Statistika"],
+//     deskripsi: "Hai semuanya, aku adalah seorang mahasiswa matematika yang sangat tertarik pada dunia belajar mengajar. Aku memiliki pengalaman mengajar selama 6 bulan sebagai pengajar freelance dan sering mengikuti berbagai pelatihan softskill",
+//     pengalaman: [
+//         {
+//             posisi: "Freelance Mengajar",
+//             lokasi: "Independen",
+//             mulai: "Juli 2021",
+//             selesai: "Now",
+//             deskripsi: "Saya telah menjadi freelance untuk mengajar anak SD hingga SMA pada mata pelajaran matematika selama 1 tahun terakhir ",
+//         },
+//         {
+//             posisi: "Ketua Divisi Materi",
+//             lokasi: "HIMATIKA UGM",
+//             mulai: "September 2021",
+//             selesai: "Now",
+//             deskripsi: "Pada himpunan mahasiswa matematika, terdapat aktivitas pengajaran untuk masyarakat umum dan saya berperan untuk mengatur materi yang akan diajarkan"
+//         }
+//     ],
+//     review: [
+//         {
+//             bintang: 5,
+//             nama: "Nurulita Nala",
+//             deskripsi: "Kakaknya sangat sabar dan cara kakaknya ngajar ngga bikin aku bosen",
+//         },
+//         {
+//             bintang: 4,
+//             nama: "Lauda Virdina",
+//             deskripsi: "Bisa banyak latihan soal matematika buat persiapan UTBK nanti"
+//         }
+//     ],
+//     overall: {
+//         bintang: 4.75,
+//         jumlah: 10
+//     }
+// }
 
+// Mengambil data teacher dari API
 const loadTeacher = async () => {
     try {
       const res = await fetch(
@@ -62,8 +63,9 @@ const loadTeacher = async () => {
     } catch (error) {
       console.log(error);
     }
-  };
+};
 
+// Memilih teacher yang dipilih di halaman teacher.html
 const displayDetail = (data) => {
     const target = localStorage.getItem("id_pengajar");
 
@@ -76,6 +78,7 @@ const displayDetail = (data) => {
     }
 }
 
+// Menampilkan data teacher ke HTML
 const displayTeacher = (data) => {
     const headerContainer = document.getElementById("teacher-header");
     const profileContainer = document.getElementById("profil-diri");
@@ -160,7 +163,7 @@ const displayTeacher = (data) => {
             
             const nodeNama = document.createElement("p");
             nodeNama.classList.add("nama");
-            nodeNama.innerText = `${teacher1.nama}`;
+            nodeNama.innerText = `${review.nama}`;
     
             node.appendChild(nodeNama);
     
@@ -184,6 +187,7 @@ const displayTeacher = (data) => {
         <p class="jumlah-ulasan">10 ulasan</p>
         `
         document.getElementById("ulasan").appendChild(nodeOverall)
+        console.log("testing")
     }
     
     appendUlasan();
@@ -192,12 +196,12 @@ const displayTeacher = (data) => {
 
 loadTeacher(); 
 
-// Fungsionalitas tombol kembali ke page teacher list
+// Tombol kembali ke page teacher.html
 const back = () => {
     window.location.href = './teacher.html';
 }
 
-// Fungsionalitas sub navbar
+// Sub navbar untuk navigasi detail informasi teacher
 
 const teacherContainer = document.getElementById("teacher-details");
 const navbar = document.getElementsByClassName("navbar-menu");

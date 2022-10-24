@@ -1,11 +1,11 @@
 let users = []
 
+// Mengambil data user dari API
 let getDataUsers = async function () {
     let response = await fetch(
         "https://634ce2e2f5d2cc648e96b729.mockapi.io/user"
     );
     users = await response.json();
-    console.log(users);
 };
 getDataUsers();
 
@@ -13,6 +13,7 @@ let email = document.getElementById('user_email');
 let password = document.getElementById('user_password');
 let text = document.getElementById('err-mess')
 
+// Memvalidasi apakah data input sudah ada di API
 function validation() {
 
     if (email.value != "" && password.value != "") {

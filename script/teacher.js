@@ -1,9 +1,10 @@
-// Search fiture
+
 const teacherContainer = document.querySelector(".list__container-card");
 const searchBar = document.getElementById("name__input");
 
 let data = [];
 
+// Search teacher berdasarkan nama, kampus, dan lokasi
 searchBar.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
 
@@ -17,6 +18,7 @@ searchBar.addEventListener("keyup", (e) => {
   displayTeacher(filteredTeachers);
 });
 
+// Mengambil data teacher dari API
 const loadTeacher = async () => {
   try {
     const res = await fetch(
@@ -29,12 +31,13 @@ const loadTeacher = async () => {
   }
 };
 
+// Menyimpan data teacher yang dipilih untuk ditampilkan di halaman teacher detail
 const check = (data) => {
-  console.log(data)
   localStorage.setItem('id_pengajar', JSON.stringify(data))
   window.location.href = './teacher-detail.html';
 }
 
+// Menampilkan data teacher yang diambil dari API
 const displayTeacher = (data) => {
   const htmlString = data
     .map((teacher) => {
