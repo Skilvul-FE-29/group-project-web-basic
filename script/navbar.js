@@ -20,10 +20,11 @@ const navToggle = () => {
 function isLogin() {
     let cek = null
     let user = localStorage.getItem('user_login')
-    let namaUser = JSON.parse(localStorage.getItem("user_login")).namaLengkap.split(" ")[0];
+    
   
     if (user != cek) {
         let profile = document.getElementById('nav-right')
+        let namaUser = JSON.parse(localStorage.getItem("user_login")).namaLengkap.split(" ")[0];
         profile.innerHTML = `
         <img src="../src/coolicon.svg" alt="" class="profile">
         <p class="nama-user">Halo ${namaUser}</p>
