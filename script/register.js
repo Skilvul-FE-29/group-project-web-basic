@@ -8,6 +8,7 @@ let school = document.getElementById("school");
 
 const API_URL = "https://634ce2e2f5d2cc648e96b729.mockapi.io/user"
 
+// Memvalidasi input user
 const validate = () => {
     if(fullName.value == "" || email.value == "" || password.value == "" || confirmPassword.value == "" || education == "" || address == "" || school == "") {
         alert("Data tidak valid");
@@ -21,6 +22,7 @@ const validate = () => {
     }
 }
 
+// Mengambil input form dari user
 const getInput = () => {
     let user = {
         "namaLengkap": fullName.value,
@@ -40,11 +42,11 @@ document.getElementById("btn-submit").addEventListener("click", (ev) => {
     validate();
 });
 
-
+// Menaruh data registrasi ke API
 function postTeacher(url, input) {
     fetch(url, {
         method: "POST",
         body: JSON.stringify(input),
         headers: {"Content-type": "application/json; charset=UTF-8"}
-    }).then(response => response.json()).then(json => console.log(json)).catch(err => console.log(err)).then(() => window.location.href = '../');
+    }).then(response => response.json()).catch(err => console.log(err)).then(() => window.location.href = '../');
 } 

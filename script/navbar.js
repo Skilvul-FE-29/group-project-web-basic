@@ -1,9 +1,8 @@
+// Toggle hamburger button untuk versi responsif
 const navToggle = () => {
     var nav1 = document.getElementById("nav-menu");
     var nav2 = document.getElementById("nav-right");
     var hamburger = document.getElementById("hamburger");
-    // nav1.classList.add("active");
-    // nav2.classList.add("active");
 
     if (nav1.className === "" && nav2.className === "" && hamburger.className === "") {
         nav1.classList.add("active");
@@ -17,15 +16,17 @@ const navToggle = () => {
     }
 }
 
+// Mengatur link pada navbar berdasarkan login atau tidaknya user
 function isLogin() {
     let cek = null
     let user = localStorage.getItem('user_login')
-    console.log(user)
+    let namaUser = JSON.parse(localStorage.getItem("user_login")).namaLengkap.split(" ")[0];
   
     if (user != cek) {
         let profile = document.getElementById('nav-right')
         profile.innerHTML = `
         <img src="../src/coolicon.svg" alt="" class="profile">
+        <p class="nama-user">Halo ${namaUser}</p>
         `
   
         document.getElementById("halaman-home").addEventListener("click", (ev) => {

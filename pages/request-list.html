@@ -1,146 +1,150 @@
+<!-- Next feature -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Base CSS -->
-    <link rel="stylesheet" href="../styles/base.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../styles/landing-page.css" />
-    <link rel="stylesheet" href="../styles/request-list.css" />
-    <title>Ajarin | Daftar Pesanan</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav-left">
-        <img class="logo" src="../src/Logo Ajarin.svg" alt="Logo Ajarin" />
-        <ul id="nav-menu">
-          <li><a href="">Beranda</a></li>
-          <li><a href="">Pesan Les</a></li>
-          <li><a href="">Daftar Pesanan</a></li>
-          <li><a href="">Daftar Sesi</a></li>
-        </ul>
-      </div>
-      <div id="nav-right">
-        <a class="login" href="">Login</a>
-        <button class="register">Register</button>
-      </div>
-      <div id="hamburger" onclick="navToggle()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </nav>
 
-    <div class="container" id="request-list">
-      <div class="request-list__title">
-        <h1>Daftar Pesanan</h1>
-      </div>
-      <div class="list-container">
-        <div class="wrapper">
-          <div class="list-info">
-            <div class="list-title">
-              <h3>Les Matematika</h3>
-              <span>Di pesan tanggal 24-08-22</span>
-            </div>
-            <div class="list-status">
-              <p class="status">Terbayar</p>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Base CSS -->
+  <link rel="stylesheet" href="../styles/base.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles/landing-page.css" />
+  <link rel="stylesheet" href="../styles/request-list.css" />
+  <title>Ajarin | Daftar Pesanan</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-left">
+      <img class="logo" src="../src/Logo Ajarin.svg" alt="Logo Ajarin" />
+      <ul id="nav-menu">
+        <li><a href="">Beranda</a></li>
+        <li><a href="">Pesan Les</a></li>
+        <li><a href="">Daftar Pesanan</a></li>
+        <li><a href="">Daftar Sesi</a></li>
+      </ul>
+    </div>
+    <div id="nav-right">
+      <a class="login" href="">Login</a>
+      <button class="register">Register</button>
+    </div>
+    <div id="hamburger" onclick="navToggle()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+
+  <div class="container" id="request-list">
+    <div class="request-list__title">
+      <h1>Daftar Pesanan</h1>
+    </div>
+    <div class="list-container">
+      <div class="wrapper">
+        <div class="list-info">
+          <div class="list-title">
+            <h3>Les Matematika</h3>
+            <span>Di pesan tanggal 24-08-22</span>
           </div>
-
-          <div class="list-button-group">
-            <button class="list-button" id="acc-btn">
-              Lihat Detail Pesanan
-            </button>
-            <button class="list-button">Lihat Daftar Pelamar</button>
-            <button id="btn-pay">Bayar Pesanan</button>
+          <div class="list-status">
+            <p class="status">Terbayar</p>
           </div>
         </div>
 
-        <div class="list-accordion">
-          <div class="accordion-item">
-            <div class="first-item item">
-              <h3>Peserta Les</h3>
-              <p>Individu</p>
-            </div>
-
-            <div class="second-item item">
-              <h3>Detail Topik</h3>
-              <p>Persamaan dan pertidaksamaan linear</p>
-            </div>
-
-            <div class="third-item item">
-              <h3>Waktu Les</h3>
-              <p>31-08-2022</p>
-              <h3>Jam</h3>
-              <p>08.00 - 09.00</p>
-            </div>
-
-            <div class="fourth-item item">
-              <h3>Lokasi</h3>
-              <p>
-                Jl. Raya Solo-Yogyakarta No.16, Kranggan, Bokoharjo, Kec.
-                Prambanan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55571
-              </p>
-            </div>
-          </div>
+        <div class="list-button-group">
+          <button class="list-button" id="acc-btn">
+            Lihat Detail Pesanan
+          </button>
+          <button class="list-button">Lihat Daftar Pelamar</button>
+          <button id="btn-pay">Bayar Pesanan</button>
         </div>
       </div>
 
-      <div class="list-container">
-        <div class="wrapper">
-          <div class="list-info">
-            <div class="list-title">
-              <h3>Les Biologi</h3>
-              <span>Dipesan tanggal 28-08-2022</span>
-            </div>
-            <div class="list-status">
-              <p class="status">Belum Di Bayar</p>
-            </div>
+      <div class="list-accordion">
+        <div class="accordion-item">
+          <div class="first-item item">
+            <h3>Peserta Les</h3>
+            <p>Individu</p>
           </div>
 
-          <div class="list-button-group">
-            <button class="list-button" id="acc-btn">
-              Lihat Detail Pesanan
-            </button>
-            <button class="list-button">Lihat Daftar Pelamar</button>
-            <button id="btn-pay">Bayar Pesanan</button>
+          <div class="second-item item">
+            <h3>Detail Topik</h3>
+            <p>Persamaan dan pertidaksamaan linear</p>
           </div>
-        </div>
 
-        <div class="list-accordion">
-          <div class="accordion-item">
-            <div class="first-item item">
-              <h3>Peserta Les</h3>
-              <p>Individu</p>
-            </div>
+          <div class="third-item item">
+            <h3>Waktu Les</h3>
+            <p>31-08-2022</p>
+            <h3>Jam</h3>
+            <p>08.00 - 09.00</p>
+          </div>
 
-            <div class="second-item item">
-              <h3>Detail Topik</h3>
-              <p>Persamaan dan pertidaksamaan linear</p>
-            </div>
-
-            <div class="third-item item">
-              <h3>Waktu Les</h3>
-              <p>31-08-2022</p>
-              <h3>Jam</h3>
-              <p>08.00 - 09.00</p>
-            </div>
-
-            <div class="fourth-item item">
-              <h3>Lokasi</h3>
-              <p>
-                Jl. Raya Solo-Yogyakarta No.16, Kranggan, Bokoharjo, Kec.
-                Prambanan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55571
-              </p>
-            </div>
+          <div class="fourth-item item">
+            <h3>Lokasi</h3>
+            <p>
+              Jl. Raya Solo-Yogyakarta No.16, Kranggan, Bokoharjo, Kec.
+              Prambanan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55571
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Js -->
-    <script src="../script/request-list.js"></script>
-  </body>
+    <div class="list-container">
+      <div class="wrapper">
+        <div class="list-info">
+          <div class="list-title">
+            <h3>Les Biologi</h3>
+            <span>Dipesan tanggal 28-08-2022</span>
+          </div>
+          <div class="list-status">
+            <p class="status">Belum Di Bayar</p>
+          </div>
+        </div>
+
+        <div class="list-button-group">
+          <button class="list-button" id="acc-btn">
+            Lihat Detail Pesanan
+          </button>
+          <button class="list-button">Lihat Daftar Pelamar</button>
+          <button id="btn-pay">Bayar Pesanan</button>
+        </div>
+      </div>
+
+      <div class="list-accordion">
+        <div class="accordion-item">
+          <div class="first-item item">
+            <h3>Peserta Les</h3>
+            <p>Individu</p>
+          </div>
+
+          <div class="second-item item">
+            <h3>Detail Topik</h3>
+            <p>Persamaan dan pertidaksamaan linear</p>
+          </div>
+
+          <div class="third-item item">
+            <h3>Waktu Les</h3>
+            <p>31-08-2022</p>
+            <h3>Jam</h3>
+            <p>08.00 - 09.00</p>
+          </div>
+
+          <div class="fourth-item item">
+            <h3>Lokasi</h3>
+            <p>
+              Jl. Raya Solo-Yogyakarta No.16, Kranggan, Bokoharjo, Kec.
+              Prambanan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55571
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Js -->
+  <script src="../script/request-list.js"></script>
+</body>
+
 </html>
